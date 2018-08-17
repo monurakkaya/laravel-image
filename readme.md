@@ -71,6 +71,9 @@ Get Default Image
     $gallery = Gallery::with('defaultImage')->first();
     $gallery->defaultImage; //returns image model
 ```
-
+Delete an Image
+```php
+    $gallery->removeImage($image)
+```
 
  
