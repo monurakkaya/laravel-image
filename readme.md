@@ -10,7 +10,11 @@ It will create the imageables table.
 
 ## Usage
 
-Add `Monurakkaya\LaravelImage\Traits\HasImage` trait to any model. 
+Change 
+
+`use Illuminate\Database\Eloquent\Model;`  line to
+
+`use Monurakkaya\LaravelImage\Support\Image as Model;` 
 
 Then in your model :
 
@@ -43,12 +47,12 @@ If you want to change these dimensions simply add public properties to your rela
 ```php
     class Gallery extends Model {
     
-        public $poster = [
+        protected $poster = [
             'width' => 800,
             'height' => 800 
         ];
         
-        public $thumbnail = false; // Package won't generate a thumbnail for uploaded images.
+        protected $thumbnail = false; // Package won't generate a thumbnail for uploaded images.
     }
 ```
 
