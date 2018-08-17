@@ -17,7 +17,7 @@ class CreateImageablesTable extends Migration
             $table->increments('id');
             $table->morphs('imageable');
             $table->string('poster')->nullable();
-            $table->string('thumb')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->boolean('is_default')->default(0);
             $table->timestamps();
         });

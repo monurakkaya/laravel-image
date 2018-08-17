@@ -39,7 +39,22 @@ trait HasImage
 
     public function images()
     {
-        return $this->morphOne(Image::class, 'imageable');
+        return $this->morphMany(Image::class, 'imageable');
+    }
+
+    public function defaultImage()
+    {
+        return $this->morphOne(Image::class, 'imageable')->orderBy('is_default', desc);
+    }
+
+    public function makeDefault(Image $image)
+    {
+        $this->images()->update([
+            'is_default' => false
+        ]);
+
+        $image->is_default = true;
+        $image->save();
     }
 
     public function deleteImage(Image $image)
