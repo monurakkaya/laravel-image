@@ -1,0 +1,25 @@
+{
+    "name": "monurakkaya/laravel-image",
+    "description": "A simple package to manage model related images",
+    "authors": [
+        {
+            "name": "monurakkaya",
+            "email": "monurakkaya@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Monurakkaya\\LaravelImage\\" : "src/app/"
+        }
+    },
+    "require": {
+        "claviska/simpleimage": "^3.3"
+    },
+    "extra" : {
+        "laravel" : {
+            "providers" : [
+                "Monurakkaya\\LaravelImage\\Providers\\ServiceProvider"
+            ]
+        }
+    }
+}
