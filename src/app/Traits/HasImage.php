@@ -44,7 +44,7 @@ trait HasImage
 
     public function defaultImage()
     {
-        return $this->morphOne(Image::class, 'imageable')->orderBy('is_default', desc);
+        return $this->morphOne(Image::class, 'imageable')->orderBy('is_default', 'desc');
     }
 
     public function makeDefault(Image $image)
