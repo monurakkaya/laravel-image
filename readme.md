@@ -4,7 +4,10 @@
 
 ## Configuration
 
-`php artisan migrate`
+```
+php artisan vendor:publish --tag=laravel-image
+php artisan migrate
+```
 
 It will create the imageables table. 
 
@@ -80,4 +83,22 @@ Delete an Image
     $gallery->removeImage($image)
 ```
 
- 
+
+## Component
+This package comes with built in image management panel. It can be useable with `@laravel-image` component
+
+```php
+    @laravel-image([
+        'model' => $gallery
+    ])@endlaravelimage
+```
+
+(Requires bootstrap3)
+
+Here is a screenshot 
+
+![component](http://monurakkaya.com/laravel-image/component.png)
+
+## Translation
+
+Refer to `/resources/lang/en/laravel-image.php`

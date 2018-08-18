@@ -3,6 +3,7 @@
 namespace Monurakkaya\LaravelImage\Observers;
 
 use Illuminate\Database\Eloquent\Model;
+use Monurakkaya\LaravelImage\Models\Image;
 
 class ImageObserver
 {
@@ -37,8 +38,13 @@ class ImageObserver
      */
     public function deleted(Model $model)
     {
-        foreach ($model->images as $image) {
-            $model->deleteImage($image);
+        if ($model instanceof Image) {
+            $model->imageable->deleteImage($model);
+        } else {
+            foreach ($model->images as $image) {
+                $model->deleteImage($image);
+            }
         }
+
     }
 }
