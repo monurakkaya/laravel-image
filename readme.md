@@ -88,9 +88,10 @@ Delete an Image
 This package comes with built in image management panel. It can be useable with `@laravel-image` component
 
 ```php
-    @laravel-image([
+    @laravelImage([
         'model' => $gallery
-    ])@endlaravelimage
+    ])
+    @endlaravelImage
 ```
 
 (Requires bootstrap3)
