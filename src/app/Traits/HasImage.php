@@ -84,7 +84,7 @@ trait HasImage
                     $poster->bestFit($this->poster['width'], $this->poster['height']);
                     $path = $this->directory . DIRECTORY_SEPARATOR . 'posters' . DIRECTORY_SEPARATOR. date('Y/m/d');
                     $filename = uniqid().'.jpg';
-                    Storage::put($path . DIRECTORY_SEPARATOR . $filename, $file->toString(null, $this->quality));
+                    Storage::put($path . DIRECTORY_SEPARATOR . $filename, $poster->toString(null, $this->quality));
                     $image->poster = $path . DIRECTORY_SEPARATOR . $filename;
                 }
 
@@ -93,7 +93,7 @@ trait HasImage
                     $thumbnail->bestFit($this->thumbnail['width'], $this->thumbnail['height']);
                     $path = $this->directory . DIRECTORY_SEPARATOR . 'thumbnails' . DIRECTORY_SEPARATOR. date('Y/m/d');
                     $filename = uniqid().'.jpg';
-                    Storage::put($path . DIRECTORY_SEPARATOR . $filename, $file->toString(null, $this->quality));
+                    Storage::put($path . DIRECTORY_SEPARATOR . $filename, $thumbnail->toString(null, $this->quality));
                     $image->thumbnail = $path . DIRECTORY_SEPARATOR . $filename;
                 }
                 $image->save();
