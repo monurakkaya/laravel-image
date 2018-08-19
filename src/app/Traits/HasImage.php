@@ -59,8 +59,8 @@ trait HasImage
 
     public function deleteImage(Image $image)
     {
-        if (Storage::exists($image->thumb)) {
-            Storage::delete($image->thumb);
+        if (Storage::exists($image->thumbnail)) {
+            Storage::delete($image->thumbnail);
         }
 
         if (Storage::exists($image->poster)) {
